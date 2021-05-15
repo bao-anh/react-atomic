@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.less';
-import { AButton } from './components/atoms';
+import { AButton, AMenu } from './components/atoms';
 
 function App() {
   return (
     // eslint-disable-next-line react/jsx-filename-extension
-    <div div className="App">
+    <div>
+      <AMenu />
       <AButton>
         test
       </AButton>

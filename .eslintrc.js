@@ -19,7 +19,7 @@ module.exports = {
   plugins: ['react', 'import', 'react-hooks'],
   ignorePatterns: ['node_modules/'],
   rules: {
-    'no-console': 'error',
+    'no-console': 'warn',
     'no-debugger': 'error',
     'no-unused-expressions': 'off',
     'comma-dangle': ['error', 'only-multiline'],
@@ -31,7 +31,7 @@ module.exports = {
       asyncArrow: 'always'
     }],
     semi: ['error', 'always'],
-    curly: [2, 'multi-or-nest'],
+    curly: [2, 'multi-or-nest']
   },
   settings: {
     react: {
