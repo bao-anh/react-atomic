@@ -1,4 +1,4 @@
 import AButton from './AButton/AButton';
-import AMenu from './AMenu/AMenu';
+import ATypography from './ATypography/ATypography';
 
-export { AButton, AMenu };
+export { AButton, ATypography };

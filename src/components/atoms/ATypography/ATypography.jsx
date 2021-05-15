@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './style.scss';
 import { Typography } from 'antd';
 
 const ATypography = ({ type, level, children }) => {
@@ -27,9 +28,9 @@ const ATypography = ({ type, level, children }) => {
     }
   };
 
-  return {
-    renderTypography
-  };
+  return (
+    renderTypography()
+  );
 };
 
 ATypography.defaultProps = {
@@ -37,7 +38,7 @@ ATypography.defaultProps = {
   type: 'text'
 };
 
-ATypography.PropTypes = {
+ATypography.propTypes = {
   children: PropTypes.string.isRequired,
   type: PropTypes.string,
   level: PropTypes.number

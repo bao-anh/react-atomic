@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { Button } from 'antd';
 import './style.scss';
 
-const AButton = ({ children, size }) => (
+const AButton = ({ children, size, type }) => (
   <Button
-    type="primary"
+    type={type}
     size={size}
   >
     {children}
@@ -14,11 +14,13 @@ const AButton = ({ children, size }) => (
 
 AButton.defaultProps = {
   size: 'middle',
+  type: 'primary',
 };
 
 AButton.propTypes = {
   children: PropTypes.string.isRequired,
-  size: PropTypes.string
+  size: PropTypes.string,
+  type: PropTypes.string
 };
 
 export default AButton;

@@ -1,15 +1,18 @@
 import React from 'react';
 import './App.less';
-import { AButton, AMenu } from './components/atoms';
+import { AHeader, ANavbar } from './components/organisms';
 
 function App() {
   return (
     // eslint-disable-next-line react/jsx-filename-extension
-    <div>
-      <AMenu />
-      <AButton>
-        test
-      </AButton>
+    <div className="wrapper">
+      <AHeader />
+      <div className="navbar-and-content">
+        <ANavbar />
+        <div className="content">
+          this
+        </div>
+      </div>
     </div>
   );
 }
