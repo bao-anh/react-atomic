@@ -31,7 +31,8 @@ module.exports = {
       asyncArrow: 'always'
     }],
     semi: ['error', 'always'],
-    curly: [2, 'multi-or-nest']
+    curly: [2, 'multi-or-nest'],
+    'react/jsx-fragments': 'off'
   },
   settings: {
     react: {

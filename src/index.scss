@@ -31,6 +31,6 @@ code {
 
   .content {
     padding: 24px;
-    width: 100%;
+    width: calc(100% - #{$navbar-width});
   }
 }
