@@ -1,0 +1,36 @@
+@import './assets/styles/global-variable';
+@import './assets//styles/spacing';
+@import './assets//styles/grid';
+
+body {
+  background-color: $gray-3 !important;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#root {
+  height: 100%;
+
+  .wrapper {
+    height: 100%;
+  }
+
+  .navbar-and-content {
+    display: flex;
+    height: calc(100% - 64px);
+  }
+
+  .content {
+    padding: 24px;
+    width: calc(100% - #{$navbar-width});
+  }
+}

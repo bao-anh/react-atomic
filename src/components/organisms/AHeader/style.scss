@@ -1,0 +1,13 @@
+@import '../../../assets/styles/global-variable';
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: $z-index-header;
+  position: sticky;
+  padding: 16px 28px;
+  box-shadow: $box-shadow;
+  background-color: $gray-1;
+}

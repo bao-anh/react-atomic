@@ -19,7 +19,7 @@ module.exports = {
   plugins: ['react', 'import', 'react-hooks'],
   ignorePatterns: ['node_modules/'],
   rules: {
-    'no-console': 'error',
+    'no-console': 'warn',
     'no-debugger': 'error',
     'no-unused-expressions': 'off',
     'comma-dangle': ['error', 'only-multiline'],
@@ -32,6 +32,7 @@ module.exports = {
     }],
     semi: ['error', 'always'],
     curly: [2, 'multi-or-nest'],
+    'react/jsx-fragments': 'off'
   },
   settings: {
     react: {
