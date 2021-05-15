@@ -1,48 +1,50 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Menu } from 'antd';
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
+import './style.scss';
+import { AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
 
 const { SubMenu } = Menu;
 
-const NavBar = () => {
-  const handleClick = () => {
-    console.log('running');
-  };
-
-  return (
-    <Menu
-      onClick={handleClick}
-      style={{ width: 256 }}
-      defaultSelectedKeys={['1']}
-      defaultOpenKeys={['sub1']}
-      mode="inline"
-    >
-      <SubMenu key="sub1" icon={<MailOutlined />} title="Navigation One">
-        <Menu.ItemGroup key="g1" title="Item 1">
-          <Menu.Item key="1">Option 1</Menu.Item>
-          <Menu.Item key="2">Option 2</Menu.Item>
-        </Menu.ItemGroup>
-        <Menu.ItemGroup key="g2" title="Item 2">
-          <Menu.Item key="3">Option 3</Menu.Item>
-          <Menu.Item key="4">Option 4</Menu.Item>
-        </Menu.ItemGroup>
+const NavBar = () => (
+  <Menu
+    style={{ width: 256 }}
+    defaultSelectedKeys={['button']}
+    defaultOpenKeys={['components', 'atoms']}
+    mode="inline"
+  >
+    <SubMenu key="components" icon={<AppstoreOutlined />} title="Components">
+      <SubMenu key="atoms" title="Atoms">
+        <Menu.Item key="button">
+          <Link to="/button">Button</Link>
+        </Menu.Item>
+        <Menu.Item key="typography">
+          <Link to="/typography">Typography</Link>
+        </Menu.Item>
       </SubMenu>
-      <SubMenu key="sub2" icon={<AppstoreOutlined />} title="Navigation Two">
-        <Menu.Item key="5">Option 5</Menu.Item>
-        <Menu.Item key="6">Option 6</Menu.Item>
-        <SubMenu key="sub3" title="Submenu">
-          <Menu.Item key="7">Option 7</Menu.Item>
-          <Menu.Item key="8">Option 8</Menu.Item>
-        </SubMenu>
+      <SubMenu key="molecules" title="Molecules">
+        <Menu.Item key="input-label">
+          <Link to="/input-label">Input label</Link>
+        </Menu.Item>
       </SubMenu>
-      <SubMenu key="sub4" icon={<SettingOutlined />} title="Navigation Three">
-        <Menu.Item key="9">Option 9</Menu.Item>
-        <Menu.Item key="10">Option 10</Menu.Item>
-        <Menu.Item key="11">Option 11</Menu.Item>
-        <Menu.Item key="12">Option 12</Menu.Item>
+      <SubMenu key="organisms" title="Organisms">
+        <Menu.Item key="navbar">
+          <Link to="/navbar">Navbar</Link>
+        </Menu.Item>
+        <Menu.Item key="header">
+          <Link to="/header">Header</Link>
+        </Menu.Item>
       </SubMenu>
-    </Menu>
-  );
-};
+    </SubMenu>
+    <SubMenu key="settings" icon={<SettingOutlined />} title="Settings">
+      <Menu.Item key="profile">
+        <Link to="/profile">Profile</Link>
+      </Menu.Item>
+      <Menu.Item key="themes">
+        <Link to="/themes">Themes</Link>
+      </Menu.Item>
+    </SubMenu>
+  </Menu>
+);
 
 export default NavBar;

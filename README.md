@@ -4,3 +4,4 @@
 - Create global variable and node sass loader
 - Create component: AButton, ATypography, ANavbar, AHeader
 - Create react router
+- Create atomic style

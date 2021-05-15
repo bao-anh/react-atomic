@@ -1,4 +1,6 @@
-@import './global-variable';
+@import './assets/styles/global-variable';
+@import './assets//styles/spacing';
+@import './assets//styles/grid';
 
 body {
   background-color: $gray-3 !important;
@@ -29,5 +31,6 @@ code {
 
   .content {
     padding: 24px;
+    width: 100%;
   }
 }
