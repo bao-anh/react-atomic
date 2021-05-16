@@ -9,3 +9,4 @@
 ### 16/05/2021
 - Create component: AMenu
 - Create recursive render navbar
+- Create Jest and Enzyme for unit test

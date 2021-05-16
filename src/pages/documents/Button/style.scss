@@ -1,0 +1,7 @@
+@import '../../../assets/styles/global-variable';
+
+.block-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-unit * 3;
+}

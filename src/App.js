@@ -2,11 +2,11 @@ import React from 'react';
 import {
   BrowserRouter,
   Switch,
+  Route
 } from 'react-router-dom';
 import './App.less';
 import { AHeader, ANavbar } from './components/organisms';
-import atomRoute from './routes/atoms';
-import documentRoute from './routes/documents';
+import { AtomTypography, DocumentTyography, DocumentButton } from './pages';
 
 function App() {
   return (
@@ -18,8 +18,11 @@ function App() {
           <ANavbar />
           <div className="content">
             <Switch>
-              {documentRoute()}
-              {atomRoute()}
+              {/* atoms */}
+              <Route path="/atoms/typography" exact component={AtomTypography} />
+              {/* documents */}
+              <Route path="/documents/button" exact component={DocumentButton} />
+              <Route path="/documents/typography" exact component={DocumentTyography} />
             </Switch>
           </div>
         </div>
