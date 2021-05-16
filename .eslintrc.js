@@ -32,7 +32,8 @@ module.exports = {
     }],
     semi: ['error', 'always'],
     curly: [2, 'multi-or-nest'],
-    'react/jsx-fragments': 'off'
+    'react/jsx-fragments': 'off',
+    'react/forbid-prop-types': 'off'
   },
   settings: {
     react: {
