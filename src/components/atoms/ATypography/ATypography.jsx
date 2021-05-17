@@ -3,19 +3,29 @@ import PropTypes from 'prop-types';
 import './style.scss';
 import { Typography } from 'antd';
 
-const ATypography = ({ type, level, children }) => {
+const ATypography = ({
+  variant,
+  level,
+  children,
+  className,
+}) => {
   const { Title, Text } = Typography;
 
   const renderText = () => (
-    <Text>{children}</Text>
+    <Text className={className}>{children}</Text>
   );
 
   const renderTitle = () => (
-    <Title level={level}>{children}</Title>
+    <Title
+      className={className}
+      level={level}
+    >
+      {children}
+    </Title>
   );
 
   const renderTypography = () => {
-    switch (type) {
+    switch (variant) {
       case 'text': {
         return renderText();
       }
@@ -35,13 +45,15 @@ const ATypography = ({ type, level, children }) => {
 
 ATypography.defaultProps = {
   level: 0,
-  type: 'text'
+  variant: 'text',
+  className: 'mb-2'
 };
 
 ATypography.propTypes = {
   children: PropTypes.string.isRequired,
-  type: PropTypes.string,
-  level: PropTypes.number
+  variant: PropTypes.string,
+  level: PropTypes.number,
+  className: PropTypes.string
 };
 
 export default ATypography;

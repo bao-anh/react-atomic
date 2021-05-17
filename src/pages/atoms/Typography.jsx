@@ -3,19 +3,19 @@ import { ATypography } from '../../components/atoms';
 
 const Typography = () => (
   <div className="mb-6">
-    <ATypography type="title" level={1}>
+    <ATypography variant="title" level={1}>
       Typography
     </ATypography>
-    <ATypography type="title" level={2}>
+    <ATypography variant="title" level={2}>
       Typography
     </ATypography>
-    <ATypography type="title" level={3}>
+    <ATypography variant="title" level={3}>
       Typography
     </ATypography>
-    <ATypography type="title" level={4}>
+    <ATypography variant="title" level={4}>
       Typography
     </ATypography>
-    <ATypography type="title" level={5}>
+    <ATypography variant="title" level={5}>
       Typography
     </ATypography>
   </div>

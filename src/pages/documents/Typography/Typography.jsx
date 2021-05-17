@@ -1,6 +1,6 @@
 import React from 'react';
-import { ADivider, ATypography } from '../../components/atoms';
-import AtomTypography from '../atoms/Typography';
+import { ADivider, ATypography } from '../../../components/atoms';
+import AtomTypography from '../../atoms/Typography';
 
 const Typography = () => (
   <React.Fragment>

@@ -1,0 +1,11 @@
+@import '../../../assets/styles/global-variable';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .label {
+    display: block;
+    margin-bottom: $spacing-unit * 1 !important;
+  }
+}
