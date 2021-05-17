@@ -6,7 +6,9 @@ import {
 } from 'react-router-dom';
 import './App.less';
 import { AHeader, ANavbar } from './components/organisms';
-import { Tyography, Button } from './pages';
+import { AAlert } from './components/atoms';
+import { Tyography, Button, Alert } from './pages';
+import { AlertProvider } from './contexts/alert/alert';
 
 function App() {
   return (
@@ -16,12 +18,16 @@ function App() {
         <AHeader />
         <div className="navbar-and-content">
           <ANavbar />
-          <div className="content">
-            <Switch>
-              <Route path="/components/button" exact component={Button} />
-              <Route path="/components/typography" exact component={Tyography} />
-            </Switch>
-          </div>
+          <AlertProvider>
+            <div className="content">
+              <AAlert />
+              <Switch>
+                <Route path="/components/button" exact component={Button} />
+                <Route path="/components/typography" exact component={Tyography} />
+                <Route path="/components/alert" exact component={Alert} />
+              </Switch>
+            </div>
+          </AlertProvider>
         </div>
       </BrowserRouter>
     </div>

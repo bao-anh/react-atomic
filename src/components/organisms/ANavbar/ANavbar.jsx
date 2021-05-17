@@ -19,7 +19,7 @@ const ANavBar = ({ location }) => {
         icon: <AppstoreOutlined />,
         childrens: [
           {
-            key: 'components--button',
+            key: 'components-button',
             title: 'Button',
             link: '/components/button'
           },
@@ -27,8 +27,12 @@ const ANavBar = ({ location }) => {
             key: 'components-typography',
             title: 'Typography',
             link: '/components/typography'
+          },
+          {
+            key: 'components-alert',
+            title: 'Alert',
+            link: '/components/alert'
           }
-
         ]
       },
       {

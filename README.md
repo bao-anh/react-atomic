@@ -12,4 +12,5 @@
 - Create Jest and Enzyme for unit test
 
 ### 17/05/2021
-- Create components: ADropdown, ASelect
+- Create components: ADropdown, ASelect, AAlert
+- Create context for alert

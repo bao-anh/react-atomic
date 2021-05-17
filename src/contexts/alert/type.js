@@ -1,0 +1,2 @@
+export const ALERT_SET_OPEN = 'ALERT_SET_OPEN';
+export const ALERT_SET_CLOSE = 'ALERT_SET_CLOSE';
