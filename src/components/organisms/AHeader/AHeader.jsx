@@ -4,10 +4,10 @@ import './style.scss';
 
 const AHeader = () => (
   <div className="header-wrapper">
-    <ATypography type="title" level={3}>
+    <ATypography variant="title" level={3}>
       React Atomic Design
     </ATypography>
-    <AButton type="primary">
+    <AButton variant="primary">
       Docs
     </AButton>
   </div>

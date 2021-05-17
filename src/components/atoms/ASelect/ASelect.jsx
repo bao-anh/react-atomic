@@ -14,6 +14,7 @@ const ASelect = ({
     items.map((item) => (
       <Option
         value={item.value}
+        key={item.value}
         disabled={item.disabled ?? false}
       >
         {item.name}
