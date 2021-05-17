@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import './App.less';
 import { AHeader, ANavbar } from './components/organisms';
-import { AtomTypography, DocumentTyography, DocumentButton } from './pages';
+import { Tyography, Button } from './pages';
 
 function App() {
   return (
@@ -18,11 +18,8 @@ function App() {
           <ANavbar />
           <div className="content">
             <Switch>
-              {/* atoms */}
-              <Route path="/atoms/typography" exact component={AtomTypography} />
-              {/* documents */}
-              <Route path="/documents/button" exact component={DocumentButton} />
-              <Route path="/documents/typography" exact component={DocumentTyography} />
+              <Route path="/components/button" exact component={Button} />
+              <Route path="/components/typography" exact component={Tyography} />
             </Switch>
           </div>
         </div>

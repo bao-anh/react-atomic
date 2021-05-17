@@ -19,64 +19,16 @@ const ANavBar = ({ location }) => {
         icon: <AppstoreOutlined />,
         childrens: [
           {
-            key: 'atoms',
-            title: 'Atoms',
-            childrens: [
-              {
-                key: 'atoms-button',
-                title: 'Button',
-                link: '/atoms/button'
-              },
-              {
-                key: 'atoms-typography',
-                title: 'Typography',
-                link: '/atoms/typography'
-              }
-            ],
+            key: 'components--button',
+            title: 'Button',
+            link: '/components/button'
           },
           {
-            key: 'molecules',
-            title: 'Molecules',
-            childrens: [
-              {
-                key: 'molecules-input-label',
-                title: 'Input label',
-                link: '/molecules/input-label'
-              }
-            ]
-          },
-          {
-            key: 'organisms',
-            title: 'Organisms',
-            childrens: [
-              {
-                key: 'organisms-navbar',
-                title: 'Navbar',
-                link: '/organisms/navbar'
-              },
-              {
-                key: 'organisms-header',
-                title: 'Header',
-                link: '/organisms/header'
-              }
-            ]
-          },
-          {
-            key: 'documents',
-            title: 'Documents',
-            childrens: [
-              {
-                key: 'documents--button',
-                title: 'Button',
-                link: '/documents/button'
-              },
-              {
-                key: 'documents-typography',
-                title: 'Typography',
-                link: '/documents/typography'
-              }
-            ]
+            key: 'components-typography',
+            title: 'Typography',
+            link: '/components/typography'
           }
+
         ]
       },
       {

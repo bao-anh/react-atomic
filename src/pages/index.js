@@ -1,7 +1,4 @@
-// Atoms
-import AtomTypography from './atoms/Typography';
-// Documents
-import DocumentTyography from './documents/Typography/Typography';
-import DocumentButton from './documents/Button/Button';
+import Tyography from './components/Typography/Typography';
+import Button from './components/Button/Button';
 
-export { AtomTypography, DocumentTyography, DocumentButton };
+export { Tyography, Button };
