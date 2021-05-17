@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { ADivider, AButton } from '../../../components/atoms';
+import { ADivider, AButton, ASelect } from '../../../components/atoms';
 import './style.scss';
+import { SIZES_ENUM } from './variable';
 
 const Button = () => {
-  const [size, setSize] = useState('middle');
+  const [size, setSize] = useState(SIZES_ENUM.MIDDLE.value);
+
   return (
     <React.Fragment>
       <ADivider orientation="left">
@@ -33,9 +35,12 @@ const Button = () => {
         Playground
       </ADivider>
       <div className="d-flex align-center mb-6">
-        <AButton type="primary" onClick={() => setSize('large')}>
-          Large
-        </AButton>
+        <ASelect
+          className="playground-item"
+          items={Object.values(SIZES_ENUM)}
+          defaultValue={size}
+          onChange={(value) => setSize(value)}
+        />
       </div>
     </React.Fragment>
   );

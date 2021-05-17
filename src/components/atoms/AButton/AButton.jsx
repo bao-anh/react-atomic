@@ -28,7 +28,7 @@ AButton.defaultProps = {
 };
 
 AButton.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.any.isRequired,
   size: PropTypes.string,
   type: PropTypes.string,
   onClick: PropTypes.func,
