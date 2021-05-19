@@ -4,5 +4,6 @@ import ADivider from './ADivider/ADivider';
 import AMenu from './AMenu/AMenu';
 import ASelect from './ASelect/ASelect';
 import AAlert from './AAlert/AAlert';
+import AInput from './AInput/AInput';
 
-export { AButton, ATypography, ADivider, AMenu, ASelect, AAlert };
+export { AButton, ATypography, ADivider, AMenu, ASelect, AAlert, AInput };

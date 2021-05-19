@@ -40,6 +40,7 @@ export const SIZES_ENUM = {
   }
 };
 
+// Dont touch
 export const STATES_ENUM = {
   DEFAULT: {
     value: 'default',

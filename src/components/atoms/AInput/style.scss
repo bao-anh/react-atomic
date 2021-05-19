@@ -1,0 +1,6 @@
+@import '../../../assets/styles/global-variable';
+
+.ant-input, .ant-input-affix-wrapper {
+  border-radius: $border-radius;
+  background-color: $gray-2;
+}

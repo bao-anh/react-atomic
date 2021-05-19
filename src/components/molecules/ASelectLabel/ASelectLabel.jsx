@@ -10,7 +10,7 @@ const ASelectLabel = ({
   className,
   label
 }) => (
-  <div className="wrapper">
+  <div className="label-wrapper">
     <ATypography className="label">
       {label}
     </ATypography>

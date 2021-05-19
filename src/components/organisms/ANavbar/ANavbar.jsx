@@ -32,6 +32,11 @@ const ANavBar = ({ location }) => {
             key: 'components-alert',
             title: 'Alert',
             link: '/components/alert'
+          },
+          {
+            key: 'components-input',
+            title: 'Input',
+            link: '/components/input'
           }
         ]
       },

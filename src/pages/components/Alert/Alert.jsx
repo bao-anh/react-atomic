@@ -3,6 +3,7 @@ import { Alert } from 'antd';
 import { ADivider, AButton } from '../../../components/atoms';
 import { useAlert } from '../../../contexts/alert/alert';
 import { ALERT_SET_OPEN } from '../../../contexts/alert/type';
+import { ALERTS_ENUM } from './variable';
 import './style.scss';
 
 const AlertComponent = () => {
@@ -13,28 +14,33 @@ const AlertComponent = () => {
         Single
       </ADivider>
       <div className="alert-block-wrapper">
-        <Alert type="info" message="Info" showIcon />
-        <Alert type="success" message="Success" showIcon />
-        <Alert type="warning" message="Warning" showIcon />
-        <Alert type="error" message="Error" showIcon />
+        {
+          Object.values(ALERTS_ENUM).map((alert) => (
+            <Alert type={alert.type} message={alert.message} showIcon />
+          ))
+        }
       </div>
       <ADivider orientation="left">
         Playground
       </ADivider>
       <div className="block-wrapper">
-        <AButton
-          type="primary"
-          onClick={() => alertDispatch({
-            type: ALERT_SET_OPEN,
-            payload: {
-              isOpen: true,
-              type: 'success',
-              message: 'Success'
-            }
-          })}
-        >
-          Success
-        </AButton>
+        {
+          Object.values(ALERTS_ENUM).map((alert) => (
+            <AButton
+              type="default"
+              onClick={() => alertDispatch({
+                type: ALERT_SET_OPEN,
+                payload: {
+                  isOpen: true,
+                  type: alert.type,
+                  message: alert.message
+                }
+              })}
+            >
+              {alert.message}
+            </AButton>
+          ))
+        }
       </div>
     </React.Fragment>
   );
