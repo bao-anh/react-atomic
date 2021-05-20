@@ -20,13 +20,13 @@ code {
 #root {
   height: 100%;
 
-  .wrapper {
+  .app-wrapper {
     height: 100%;
   }
 
   .navbar-and-content {
     display: flex;
-    height: calc(100% - 64px);
+    height: calc(100% - #{$header-height});
   }
 
   .content {

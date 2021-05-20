@@ -1,11 +1,8 @@
 @import '../../../assets/styles/global-variable';
 
-.block-wrapper {
+.alert-block-wrapper {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: $spacing-unit * 3;
-}
-
-.playground-item {
-  width: 100px
 }

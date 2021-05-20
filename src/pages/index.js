@@ -1,7 +1,6 @@
-// Atoms
-import AtomTypography from './atoms/Typography';
-// Documents
-import DocumentTyography from './documents/Typography/Typography';
-import DocumentButton from './documents/Button/Button';
+import Tyography from './components/Typography/Typography';
+import Button from './components/Button/Button';
+import Alert from './components/Alert/Alert';
+import Input from './components/Input/Input';
 
-export { AtomTypography, DocumentTyography, DocumentButton };
+export { Tyography, Button, Alert, Input };

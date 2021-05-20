@@ -1,0 +1,11 @@
+@import '../../../assets/styles/global-variable';
+
+.block-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-unit * 3;
+}
+
+.playground-item {
+  width: 120px
+}

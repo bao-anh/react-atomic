@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ADivider, AButton } from '../../../components/atoms';
 import { ASelectLabel } from '../../../components/molecules';
 import './style.scss';
@@ -7,12 +7,18 @@ import {
   SIZES_ENUM,
   STATES_ENUM
 } from './variable';
+import usePlayGround from '../../../hooks/usePlayGround';
 
 const Button = () => {
-  const [size, setSize] = useState(SIZES_ENUM.MIDDLE.value);
-  const [state, setState] = useState(STATES_ENUM.DEFAULT.value);
-
-  const renderState = (currentState) => currentState === state;
+  const {
+    state,
+    setState,
+    size,
+    setSize,
+    disabled,
+    loading,
+    danger
+  } = usePlayGround();
 
   return (
     <React.Fragment>
@@ -26,9 +32,9 @@ const Button = () => {
               type={button.type}
               key={button.type}
               size={size}
-              disabled={renderState(STATES_ENUM.DISABLED.value)}
-              loading={renderState(STATES_ENUM.LOADING.value)}
-              danger={renderState(STATES_ENUM.DANGER.value)}
+              disabled={disabled}
+              loading={loading}
+              danger={danger}
             >
               {button.title}
             </AButton>
