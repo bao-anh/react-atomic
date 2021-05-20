@@ -13,7 +13,8 @@ const ASelectLabel = ({
   size,
   type,
   autoSize,
-  allowClear
+  allowClear,
+  value
 }) => (
   <div className={`$label-wrapper ${className}`}>
     <ATypography className="label">
@@ -28,6 +29,7 @@ const ASelectLabel = ({
       autoSize={autoSize}
       type={type}
       allowClear={allowClear}
+      value={value}
     />
   </div>
 );
@@ -42,7 +44,8 @@ ASelectLabel.defaultProps = {
   size: 'middle',
   type: 'text',
   autoSize: false,
-  allowClear: false
+  allowClear: false,
+  value: ''
 };
 
 ASelectLabel.propTypes = {
@@ -55,7 +58,8 @@ ASelectLabel.propTypes = {
   size: PropTypes.string,
   type: PropTypes.string,
   autoSize: PropTypes.bool || PropTypes.object,
-  allowClear: PropTypes.bool
+  allowClear: PropTypes.bool,
+  value: PropTypes.string
 };
 
 export default ASelectLabel;

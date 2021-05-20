@@ -22,4 +22,5 @@
 ### 20/05/2021
 - Create components: ACard
 - Split authentication and default router
-- Create login UI
+- Create authentication UI
+- Create transition between register and login

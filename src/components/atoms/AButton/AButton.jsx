@@ -12,7 +12,8 @@ const AButton = ({
   disabled,
   loading,
   danger,
-  block
+  block,
+  onAnimationEnd
 }) => (
   <Button
     type={type}
@@ -23,6 +24,7 @@ const AButton = ({
     loading={loading}
     danger={danger}
     block={block}
+    onAnimationEnd={onAnimationEnd}
   >
     {children}
   </Button>
@@ -36,7 +38,8 @@ AButton.defaultProps = {
   disabled: false,
   loading: false,
   danger: false,
-  block: false
+  block: false,
+  onAnimationEnd: () => {}
 };
 
 AButton.propTypes = {
@@ -49,6 +52,7 @@ AButton.propTypes = {
   loading: PropTypes.bool,
   danger: PropTypes.bool,
   block: PropTypes.bool,
+  onAnimationEnd: PropTypes.func,
 };
 
 export default AButton;
