@@ -1,0 +1,9 @@
+@import './global-variable';
+
+.shadow-50 {
+  box-shadow: $shadow-50;
+}
+
+.shadow-100 {
+  box-shadow: $shadow-100;
+}
