@@ -22,16 +22,16 @@ const ACard = ({
 export default ACard;
 
 ACard.defaultProps = {
-  width: 300,
-  height: 300,
+  width: 'auto',
+  height: 'auto',
   title: '',
   className: ''
 };
 
 ACard.propTypes = {
   children: PropTypes.any.isRequired,
-  width: PropTypes.number,
-  height: PropTypes.number,
+  width: PropTypes.any,
+  height: PropTypes.any,
   title: PropTypes.string,
   className: PropTypes.string
 };
