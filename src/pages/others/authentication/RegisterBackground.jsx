@@ -7,7 +7,7 @@ import './style.scss';
 const RegisterBackground = ({ onChangeAnimation }) => (
   <div className="background-wrapper">
     <div className="background-image">
-      <AImage src={registerBackground} alt="register-background" width="100%" height={256} />
+      <AImage src={registerBackground} alt="register-background" width="100%" height={270} />
     </div>
     <AButton
       block

@@ -15,6 +15,7 @@ const Authentication = () => {
     password: '',
     confirmPassword: '',
   });
+  // const [isLoading, setIsLoading] = useState(false);
 
   const isShowAnimationLogin = currentAnimation === 'showLogin';
   const isHideAnimationLogin = currentAnimation === 'hideLogin';
@@ -34,12 +35,21 @@ const Authentication = () => {
     });
   };
 
+  const onRegister = () => {
+
+  };
+
+  const onLogin = () => {
+
+  };
+
   const renderRegister = () => (
     <div className={ANIMATIONS_ENUM.REGISTER[currentAnimation]}>
       {(!isShowLogin || isShowAnimationLogin) ? (
         <Register
           credentials={credentials}
           onChangeCredentials={onChangeCredentials}
+          onRegister={onRegister}
         />
       ) : (
         <RegisterBackground onChangeAnimation={onChangeAnimation} />
@@ -53,6 +63,7 @@ const Authentication = () => {
         <Login
           credentials={credentials}
           onChangeCredentials={onChangeCredentials}
+          onLogin={onLogin}
         />
       ) : (
         <LoginBackground onChangeAnimation={onChangeAnimation} />

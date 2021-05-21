@@ -26,5 +26,7 @@
 - Create transition between register and login
 
 ### 21/05/2021
-- Create components: AImage
+- Create components: AImage, AInputForm, AButtonForm
 - Added image for login, register background
+- Create regex for password
+- Create rules for form validation

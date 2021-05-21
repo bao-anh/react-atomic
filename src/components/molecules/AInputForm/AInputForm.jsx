@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { AInput, ATypography } from '../../atoms';
-import './style.scss';
+import { Form } from 'antd';
+import AInputLabel from '../AInputLabel/AInputLabel';
 
-const AInputLabel = ({
+const { Item } = Form;
+
+const AInputForm = ({
   onChange,
   className,
   label,
@@ -14,13 +16,18 @@ const AInputLabel = ({
   type,
   autoSize,
   allowClear,
-  value
+  value,
+  name,
+  rules
 }) => (
-  <div className={`$label-wrapper ${className}`}>
-    <ATypography className="label">
-      {label}
-    </ATypography>
-    <AInput
+  <Item
+    className={className}
+    name={name}
+    rules={rules}
+  >
+    <AInputLabel
+      label={label}
+      value={value}
       placeholder={placeholder}
       onChange={onChange}
       disabled={disabled}
@@ -29,12 +36,11 @@ const AInputLabel = ({
       autoSize={autoSize}
       type={type}
       allowClear={allowClear}
-      value={value}
     />
-  </div>
+  </Item>
 );
 
-AInputLabel.defaultProps = {
+AInputForm.defaultProps = {
   onChange: () => {},
   className: '',
   label: '',
@@ -45,10 +51,12 @@ AInputLabel.defaultProps = {
   type: 'text',
   autoSize: false,
   allowClear: false,
-  value: ''
+  value: '',
+  name: '',
+  rules: [{}]
 };
 
-AInputLabel.propTypes = {
+AInputForm.propTypes = {
   onChange: PropTypes.func,
   className: PropTypes.string,
   label: PropTypes.string,
@@ -59,7 +67,9 @@ AInputLabel.propTypes = {
   type: PropTypes.string,
   autoSize: PropTypes.bool || PropTypes.object,
   allowClear: PropTypes.bool,
-  value: PropTypes.string
+  value: PropTypes.string,
+  name: PropTypes.string,
+  rules: PropTypes.arrayOf(PropTypes.object)
 };
 
-export default AInputLabel;
+export default AInputForm;

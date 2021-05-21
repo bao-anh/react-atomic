@@ -15,7 +15,6 @@ const AImage = ({
     width={width}
     height={height}
     alt={alt}
-    bordered={bordered}
     className={`${className} ${bordered ? 'bordered' : ''}`}
   />
 );

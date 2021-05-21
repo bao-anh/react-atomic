@@ -6,7 +6,7 @@ import { AButton, AImage } from '../../../components/atoms';
 const LoginBackground = ({ onChangeAnimation }) => (
   <div className="background-wrapper">
     <div className="background-image">
-      <AImage src={loginBackground} alt="login-background" width="100%" height={256} />
+      <AImage src={loginBackground} alt="login-background" width="100%" height={270} />
     </div>
     <AButton
       type="default"
