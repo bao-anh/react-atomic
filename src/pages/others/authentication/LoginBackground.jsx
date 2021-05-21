@@ -1,10 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { AButton } from '../../../components/atoms';
+import { loginBackground } from '../../../assets/images';
+import { AButton, AImage } from '../../../components/atoms';
 
 const LoginBackground = ({ onChangeAnimation }) => (
-  <div>
-    <AButton onClick={() => onChangeAnimation('showLogin')}>
+  <div className="background-wrapper">
+    <div className="background-image">
+      <AImage src={loginBackground} alt="login-background" width="100%" height={256} />
+    </div>
+    <AButton
+      type="default"
+      block
+      onClick={() => onChangeAnimation('showLogin')}
+    >
       Login
     </AButton>
   </div>

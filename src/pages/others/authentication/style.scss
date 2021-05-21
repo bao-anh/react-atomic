@@ -146,3 +146,13 @@
     opacity: 1;
   }
 }
+
+.background-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .background-image {
+    flex-grow: 1;
+    margin-bottom: 3 * $spacing-unit;
+  }
+}

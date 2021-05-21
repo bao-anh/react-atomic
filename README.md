@@ -24,3 +24,7 @@
 - Split authentication and default router
 - Create authentication UI
 - Create transition between register and login
+
+### 21/05/2021
+- Create components: AImage
+- Added image for login, register background
