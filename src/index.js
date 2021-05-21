@@ -5,8 +5,6 @@ import App from './App';
 
 ReactDOM.render(
   // eslint-disable-next-line react/jsx-filename-extension
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <App />,
   document.getElementById('root')
 );

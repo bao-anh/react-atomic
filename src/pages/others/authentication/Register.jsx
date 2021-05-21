@@ -1,8 +1,11 @@
 import React from 'react';
-import { ATypography, AButton } from '../../../components/atoms';
-import { AInputLabel } from '../../../components/molecules';
+import PropTypes from 'prop-types';
+import { Form } from 'antd';
+import { ATypography } from '../../../components/atoms';
+import { AInputForm, AButtonForm } from '../../../components/molecules';
+import { emailRule, passwordRule, confirmPasswordRule } from '../../../utils/validationUtils';
 
-const Register = () => (
+const Register = ({ credentials, onChangeCredentials, onRegister }) => (
   <div className="authentication-login-wrapper">
     <ATypography
       variant="title"
@@ -11,31 +14,53 @@ const Register = () => (
     >
       Register
     </ATypography>
-    <div className="authentication-content">
-      <div>
-        <AInputLabel
-          label="Email"
-          placeholder="Enter your email"
-          className="mb-4"
-        />
-        <AInputLabel
-          label="Password"
-          placeholder="Enter your password"
-          type="password"
-          className="mb-4"
-        />
-        <AInputLabel
-          label="Confirm password"
-          placeholder="Enter your confirm password"
-          type="password"
-          className="mb-4"
-        />
-      </div>
-      <AButton>
+    <Form
+      name="register"
+      className="authentication-content"
+      onFinish={onRegister}
+    >
+      <AInputForm
+        value={credentials.email}
+        label="Email"
+        name="email"
+        rules={emailRule}
+        placeholder="Enter your email"
+        onChange={(e) => onChangeCredentials('email', e.target.value)}
+      />
+      <AInputForm
+        value={credentials.password}
+        label="Password"
+        name="password"
+        rules={passwordRule}
+        placeholder="Enter your password"
+        type="password"
+        onChange={(e) => onChangeCredentials('password', e.target.value)}
+      />
+      <AInputForm
+        value={credentials.confirmPassword}
+        label="Confirm password"
+        rules={confirmPasswordRule}
+        name="confirmPassword"
+        placeholder="Enter your confirm password"
+        type="password"
+        onChange={(e) => onChangeCredentials('confirmPassword', e.target.value)}
+      />
+      <AButtonForm htmlType="submit" block>
         Register
-      </AButton>
-    </div>
+      </AButtonForm>
+    </Form>
   </div>
 );
 
 export default Register;
+
+Register.defaultProps = {
+  onChangeCredentials: () => {},
+  onRegister: () => {},
+};
+
+Register.propTypes = {
+  credentials: PropTypes.object.isRequired,
+  onChangeCredentials: PropTypes.func,
+  onRegister: PropTypes.func
+};

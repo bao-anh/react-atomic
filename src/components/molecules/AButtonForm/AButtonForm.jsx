@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'antd';
+import { Form } from 'antd';
+import { AButton } from '../../atoms';
 import './style.scss';
 
-const AButton = ({
+const { Item } = Form;
+
+const AButtonForm = ({
   children,
   size,
   type,
@@ -15,22 +18,25 @@ const AButton = ({
   block,
   htmlType
 }) => (
-  <Button
-    type={type}
-    size={size}
-    onClick={onClick}
-    className={className}
-    disabled={disabled}
-    loading={loading}
-    danger={danger}
-    block={block}
-    htmlType={htmlType}
-  >
-    {children}
-  </Button>
+  <Item className={`button-form-wrapper ${className}`}>
+    <AButton
+      type={type}
+      size={size}
+      onClick={onClick}
+      disabled={disabled}
+      loading={loading}
+      danger={danger}
+      block={block}
+      htmlType={htmlType}
+    >
+      {children}
+    </AButton>
+  </Item>
 );
 
-AButton.defaultProps = {
+export default AButtonForm;
+
+AButtonForm.defaultProps = {
   size: 'middle',
   type: 'primary',
   onClick: () => {},
@@ -42,7 +48,7 @@ AButton.defaultProps = {
   htmlType: ''
 };
 
-AButton.propTypes = {
+AButtonForm.propTypes = {
   children: PropTypes.any.isRequired,
   size: PropTypes.string,
   type: PropTypes.string,
@@ -54,5 +60,3 @@ AButton.propTypes = {
   block: PropTypes.bool,
   htmlType: PropTypes.string,
 };
-
-export default AButton;

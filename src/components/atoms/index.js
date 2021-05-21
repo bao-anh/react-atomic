@@ -6,6 +6,7 @@ import ASelect from './ASelect/ASelect';
 import AAlert from './AAlert/AAlert';
 import AInput from './AInput/AInput';
 import ACard from './ACard/ACard';
+import AImage from './AImage/AImage';
 
 export {
   AButton,
@@ -15,5 +16,6 @@ export {
   ASelect,
   AAlert,
   AInput,
-  ACard
+  ACard,
+  AImage
 };

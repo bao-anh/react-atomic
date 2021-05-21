@@ -1,8 +1,11 @@
 import React from 'react';
-import { ATypography, AButton } from '../../../components/atoms';
-import { AInputLabel } from '../../../components/molecules';
+import PropTypes from 'prop-types';
+import { Form } from 'antd';
+import { ATypography } from '../../../components/atoms';
+import { AInputForm, AButtonForm } from '../../../components/molecules';
+import { emailRule, passwordRule } from '../../../utils/validationUtils';
 
-const Login = () => (
+const Login = ({ credentials, onChangeCredentials, onLogin }) => (
   <div className="authentication-login-wrapper">
     <ATypography
       variant="title"
@@ -11,25 +14,46 @@ const Login = () => (
     >
       Login
     </ATypography>
-    <div className="authentication-content">
+    <Form
+      name="login"
+      className="authentication-content"
+      onFinish={onLogin}
+    >
       <div className="login-field">
-        <AInputLabel
+        <AInputForm
+          value={credentials.email}
           label="Email"
+          name="email"
+          rules={emailRule}
           placeholder="Enter your email"
-          className="mb-4"
+          onChange={(e) => onChangeCredentials('email', e.target.value)}
         />
-        <AInputLabel
+        <AInputForm
+          value={credentials.password}
           label="Password"
+          name="password"
+          rules={passwordRule}
           placeholder="Enter your password"
           type="password"
-          className="mb-4"
+          onChange={(e) => onChangeCredentials('password', e.target.value)}
         />
       </div>
-      <AButton>
+      <AButtonForm htmlType="submit" block>
         Login
-      </AButton>
-    </div>
+      </AButtonForm>
+    </Form>
   </div>
 );
 
 export default Login;
+
+Login.defaultProps = {
+  onChangeCredentials: () => {},
+  onLogin: () => {}
+};
+
+Login.propTypes = {
+  credentials: PropTypes.object.isRequired,
+  onChangeCredentials: PropTypes.func,
+  onLogin: PropTypes.func,
+};

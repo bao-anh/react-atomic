@@ -22,4 +22,11 @@
 ### 20/05/2021
 - Create components: ACard
 - Split authentication and default router
-- Create login UI
+- Create authentication UI
+- Create transition between register and login
+
+### 21/05/2021
+- Create components: AImage, AInputForm, AButtonForm
+- Added image for login, register background
+- Create regex for password
+- Create rules for form validation

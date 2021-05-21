@@ -13,6 +13,7 @@
   .login-content {
     display: grid;
     grid-template-columns: 50% 50%;
+    min-height: 300px;
 
     & > div:first-child {
       padding-right: 12px; 
@@ -26,6 +27,7 @@
   .authentication-login-wrapper {
     display: flex;
     flex-direction: column;
+    height: 100%;
   }
 
   .authentication-content {
@@ -38,5 +40,119 @@
     .login-field {
       margin: auto 0;
     }
+  }
+}
+
+.show-register-animation {
+  animation: show-register-transition #{$transition-duration} linear;
+}
+
+@keyframes show-register-transition {
+  0% {
+    transform: translateX(40%);
+    opacity: 0;
+  }
+  25% {
+    transform: translateX(30%);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translateX(20%);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateX(10%);
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hide-register-animation {
+  animation: hide-register-transition #{$transition-duration} linear;
+}
+
+@keyframes hide-register-transition {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    transform: translateX(10%);
+    opacity: 0.75;
+  }
+  50% {
+    transform: translateX(20%);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateX(30%);
+    opacity: 0.25;
+  }
+  100% {
+    transform: translateX(40%);
+    opacity: 0;
+  }
+}
+
+.hide-login-animation {
+  animation: hide-transition #{$transition-duration} linear;
+}
+
+@keyframes hide-transition {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    transform: translateX(-10%);
+    opacity: 0.75;
+  }
+  50% {
+    transform: translateX(-20%);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateX(-30%);
+    opacity: 0.25;
+  }
+  100% {
+    transform: translateX(-40%);
+    opacity: 0;
+  }
+}
+
+.show-login-animation {
+  animation: show-login-transition #{$transition-duration} linear;
+}
+
+@keyframes show-login-transition {
+  0% {
+    transform: translateX(-40%);
+    opacity: 0;
+  }
+  25% {
+    transform: translateX(-30%);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translateX(-20%);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateX(-10%);
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.background-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .background-image {
+    flex-grow: 1;
+    margin-bottom: 3 * $spacing-unit;
   }
 }
