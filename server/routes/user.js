@@ -5,7 +5,7 @@ const { validationResult } = require('express-validator');
 const Users = require('../models/users.model');
 const { registerUserValidation } = require('../utils/validationUtils');
 const { formatErrorsValidation } = require('../utils/formatUtils');
-const { TIME_TO_LIVE, TOKEN_KEY } = require('../constants/auth');
+const { TIME_TO_LIVE, SECRET_KEY } = require('../constants/auth');
 const { auth } = require('../middlewares');
 
 /*
@@ -35,7 +35,7 @@ router.post('/login', async (req, res) => {
       });
     }
     // Create token
-    const token = jwt.sign({ email, id: user._id }, TOKEN_KEY, { expiresIn: TIME_TO_LIVE });
+    const token = jwt.sign({ email, id: user._id }, SECRET_KEY, { expiresIn: TIME_TO_LIVE });
     return res.send({ access_token: token });
   } catch (err) {
     return res.status(500).json(err);
@@ -71,7 +71,7 @@ router.post('/', registerUserValidation(), async (req, res) => {
     });
     await newUser.save();
     // Create token
-    const token = jwt.sign({ email, id: newUser._id }, TOKEN_KEY, { expiresIn: TIME_TO_LIVE });
+    const token = jwt.sign({ email, id: newUser._id }, SECRET_KEY, { expiresIn: TIME_TO_LIVE });
     return res.send({ access_token: token, alert: 'Register successfuly' });
   } catch (err) {
     return res.status(500).send(err);
