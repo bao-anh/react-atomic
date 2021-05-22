@@ -30,3 +30,9 @@
 - Added image for login, register background
 - Create regex for password
 - Create rules for form validation
+
+### 22/05/2021
+- Init server with express, mongoose and mongoDB
+- Create get all user, register user api
+- Create validation with express-validator
+- Create validaionUtils, formatUtils
