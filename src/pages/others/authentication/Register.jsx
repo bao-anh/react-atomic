@@ -5,7 +5,12 @@ import { ATypography } from '../../../components/atoms';
 import { AInputForm, AButtonForm } from '../../../components/molecules';
 import { emailRule, passwordRule, confirmPasswordRule } from '../../../utils/validationUtils';
 
-const Register = ({ credentials, onChangeCredentials, onRegister }) => (
+const Register = ({
+  credentials,
+  onChangeCredentials,
+  onRegister,
+  isLoading
+}) => (
   <div className="authentication-login-wrapper">
     <ATypography
       variant="title"
@@ -45,7 +50,11 @@ const Register = ({ credentials, onChangeCredentials, onRegister }) => (
         type="password"
         onChange={(e) => onChangeCredentials('confirmPassword', e.target.value)}
       />
-      <AButtonForm htmlType="submit" block>
+      <AButtonForm
+        htmlType="submit"
+        block
+        loading={isLoading}
+      >
         Register
       </AButtonForm>
     </Form>
@@ -57,10 +66,12 @@ export default Register;
 Register.defaultProps = {
   onChangeCredentials: () => {},
   onRegister: () => {},
+  isLoading: false
 };
 
 Register.propTypes = {
   credentials: PropTypes.object.isRequired,
   onChangeCredentials: PropTypes.func,
-  onRegister: PropTypes.func
+  onRegister: PropTypes.func,
+  isLoading: PropTypes.bool
 };

@@ -5,7 +5,12 @@ import { ATypography } from '../../../components/atoms';
 import { AInputForm, AButtonForm } from '../../../components/molecules';
 import { emailRule, passwordRule } from '../../../utils/validationUtils';
 
-const Login = ({ credentials, onChangeCredentials, onLogin }) => (
+const Login = ({
+  credentials,
+  onChangeCredentials,
+  onLogin,
+  isLoading
+}) => (
   <div className="authentication-login-wrapper">
     <ATypography
       variant="title"
@@ -38,7 +43,11 @@ const Login = ({ credentials, onChangeCredentials, onLogin }) => (
           onChange={(e) => onChangeCredentials('password', e.target.value)}
         />
       </div>
-      <AButtonForm htmlType="submit" block>
+      <AButtonForm
+        htmlType="submit"
+        block
+        loading={isLoading}
+      >
         Login
       </AButtonForm>
     </Form>
@@ -49,11 +58,13 @@ export default Login;
 
 Login.defaultProps = {
   onChangeCredentials: () => {},
-  onLogin: () => {}
+  onLogin: () => {},
+  isLoading: false
 };
 
 Login.propTypes = {
   credentials: PropTypes.object.isRequired,
   onChangeCredentials: PropTypes.func,
   onLogin: PropTypes.func,
+  isLoading: PropTypes.bool,
 };

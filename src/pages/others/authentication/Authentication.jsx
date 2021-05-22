@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as authAction from '../../../redux/actions/auth';
 import { ACard } from '../../../components/atoms';
 import Login from './Login';
 import Register from './Register';
@@ -7,7 +11,7 @@ import RegisterBackground from './RegisterBackground';
 import { ANIMATIONS_ENUM, transitionDuration } from './variable';
 import './style.scss';
 
-const Authentication = () => {
+const Authentication = ({ login, history }) => {
   const [isShowLogin, setIsShowLogin] = useState(true);
   const [currentAnimation, setCurrentAnimation] = useState(null);
   const [credentials, setCredentials] = useState({
@@ -15,7 +19,7 @@ const Authentication = () => {
     password: '',
     confirmPassword: '',
   });
-  // const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const isShowAnimationLogin = currentAnimation === 'showLogin';
   const isHideAnimationLogin = currentAnimation === 'hideLogin';
@@ -39,8 +43,19 @@ const Authentication = () => {
 
   };
 
-  const onLogin = () => {
+  const onLoginSuccess = () => {
+    setIsLoading(false);
+    history.push('/');
+  };
 
+  const onLoginError = () => {
+    setIsLoading(false);
+  };
+
+  const onLogin = () => {
+    setIsLoading(true);
+    const { email, password } = credentials;
+    login({ email, password }, onLoginSuccess, onLoginError);
   };
 
   const renderRegister = () => (
@@ -48,6 +63,7 @@ const Authentication = () => {
       {(!isShowLogin || isShowAnimationLogin) ? (
         <Register
           credentials={credentials}
+          isLoading={isLoading}
           onChangeCredentials={onChangeCredentials}
           onRegister={onRegister}
         />
@@ -62,6 +78,7 @@ const Authentication = () => {
       {(isShowLogin || isHideAnimationLogin) ? (
         <Login
           credentials={credentials}
+          isLoading={isLoading}
           onChangeCredentials={onChangeCredentials}
           onLogin={onLogin}
         />
@@ -84,4 +101,18 @@ const Authentication = () => {
   );
 };
 
-export default Authentication;
+Authentication.propTypes = {
+  login: PropTypes.func.isRequired,
+  history: PropTypes.any.isRequired
+};
+
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  login: bindActionCreators(authAction.login, dispatch),
+  register: bindActionCreators(authAction.register, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Authentication);

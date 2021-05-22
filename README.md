@@ -37,3 +37,5 @@
 - Create validation with express-validator
 - Create validaionUtils, formatUtils
 - Create OAuth2 authorization
+- Init redux, redux-saga, services, store, actions, types, reducers
+- First call api to server
