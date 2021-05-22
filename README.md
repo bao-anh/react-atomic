@@ -36,3 +36,4 @@
 - Create get all user, register user api
 - Create validation with express-validator
 - Create validaionUtils, formatUtils
+- Create OAuth2 authorization

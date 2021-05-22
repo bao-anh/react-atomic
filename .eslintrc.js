@@ -33,7 +33,8 @@ module.exports = {
     semi: ['error', 'always'],
     curly: [2, 'multi-or-nest'],
     'react/jsx-fragments': 'off',
-    'react/forbid-prop-types': 'off'
+    'react/forbid-prop-types': 'off',
+    'no-underscore-dangle': 'off'
   },
   settings: {
     react: {
