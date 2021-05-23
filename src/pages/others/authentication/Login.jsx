@@ -9,7 +9,9 @@ const Login = ({
   credentials,
   onChangeCredentials,
   onLogin,
-  isLoading
+  isLoading,
+  errors,
+  onFocusField
 }) => (
   <div className="authentication-login-wrapper">
     <ATypography
@@ -32,6 +34,8 @@ const Login = ({
           rules={emailRule}
           placeholder="Enter your email"
           onChange={(e) => onChangeCredentials('email', e.target.value)}
+          onFocus={() => onFocusField('email')}
+          errorMessage={errors.email}
         />
         <AInputForm
           value={credentials.password}
@@ -40,7 +44,9 @@ const Login = ({
           rules={passwordRule}
           placeholder="Enter your password"
           type="password"
+          onFocus={() => onFocusField('password')}
           onChange={(e) => onChangeCredentials('password', e.target.value)}
+          errorMessage={errors.password}
         />
       </div>
       <AButtonForm
@@ -59,12 +65,15 @@ export default Login;
 Login.defaultProps = {
   onChangeCredentials: () => {},
   onLogin: () => {},
-  isLoading: false
+  isLoading: false,
+  onFocusField: () => {}
 };
 
 Login.propTypes = {
   credentials: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired,
   onChangeCredentials: PropTypes.func,
   onLogin: PropTypes.func,
   isLoading: PropTypes.bool,
+  onFocusField: PropTypes.func
 };

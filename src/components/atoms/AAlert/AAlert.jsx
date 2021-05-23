@@ -5,7 +5,7 @@ import { useAlert } from '../../../contexts/alert/alert';
 import { ALERT_SET_CLOSE } from '../../../contexts/alert/type';
 import './style.scss';
 
-const timeout = 2000;
+const timeout = 200000000;
 
 const AAlert = () => {
   const { alertState, alertDispatch } = useAlert();

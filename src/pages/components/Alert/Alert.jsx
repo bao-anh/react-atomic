@@ -16,7 +16,7 @@ const AlertComponent = () => {
       <div className="alert-block-wrapper">
         {
           Object.values(ALERTS_ENUM).map((alert) => (
-            <Alert type={alert.type} message={alert.message} showIcon />
+            <Alert key={alert.type} type={alert.type} message={alert.message} showIcon />
           ))
         }
       </div>
@@ -28,6 +28,7 @@ const AlertComponent = () => {
           Object.values(ALERTS_ENUM).map((alert) => (
             <AButton
               type="default"
+              key={alert.type}
               onClick={() => alertDispatch({
                 type: ALERT_SET_OPEN,
                 payload: {

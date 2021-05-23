@@ -16,8 +16,11 @@ axiosInstance.interceptors.request.use((config) => config, (error) => Promise.re
 // Response interceptor
 axiosInstance.interceptors.response.use((response) => response, (error) => Promise.reject(error));
 
+// Auth
 const login = (params) => axiosInstance.post('/auth/login', params);
+const register = (params) => axiosInstance.post('/auth/register', params);
 
 export default {
-  login
+  login,
+  register
 };

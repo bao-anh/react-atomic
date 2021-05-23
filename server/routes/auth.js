@@ -24,7 +24,6 @@ router.post('/login', async (req, res) => {
         }
       });
     }
-    console.log(user);
     // Check if password is correct or not
     const isPasswordCorrect = await bcrypt.compare(password, user.password);
     if (!isPasswordCorrect) {
@@ -34,12 +33,10 @@ router.post('/login', async (req, res) => {
         }
       });
     }
-    console.log('compared');
     // Create token
     const token = jwt.sign({ email, id: user._id }, SECRET_KEY, { expiresIn: TIME_TO_LIVE });
     return res.send({ access_token: token });
   } catch (err) {
-    console.log(err);
     return res.status(500).json(err);
   }
 });

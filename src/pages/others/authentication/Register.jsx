@@ -9,7 +9,9 @@ const Register = ({
   credentials,
   onChangeCredentials,
   onRegister,
-  isLoading
+  isLoading,
+  errors,
+  onFocusField
 }) => (
   <div className="authentication-login-wrapper">
     <ATypography
@@ -30,6 +32,8 @@ const Register = ({
         name="email"
         rules={emailRule}
         placeholder="Enter your email"
+        errorMessage={errors.email}
+        onFocus={() => onFocusField('email')}
         onChange={(e) => onChangeCredentials('email', e.target.value)}
       />
       <AInputForm
@@ -39,6 +43,8 @@ const Register = ({
         rules={passwordRule}
         placeholder="Enter your password"
         type="password"
+        errorMessage={errors.password}
+        onFocus={() => onFocusField('password')}
         onChange={(e) => onChangeCredentials('password', e.target.value)}
       />
       <AInputForm
@@ -48,6 +54,8 @@ const Register = ({
         name="confirmPassword"
         placeholder="Enter your confirm password"
         type="password"
+        errorMessage={errors.confirmPassword}
+        onFocus={() => onFocusField('confirmPassword')}
         onChange={(e) => onChangeCredentials('confirmPassword', e.target.value)}
       />
       <AButtonForm
@@ -66,12 +74,15 @@ export default Register;
 Register.defaultProps = {
   onChangeCredentials: () => {},
   onRegister: () => {},
-  isLoading: false
+  isLoading: false,
+  onFocusField: () => {}
 };
 
 Register.propTypes = {
   credentials: PropTypes.object.isRequired,
   onChangeCredentials: PropTypes.func,
   onRegister: PropTypes.func,
-  isLoading: PropTypes.bool
+  isLoading: PropTypes.bool,
+  errors: PropTypes.object.isRequired,
+  onFocusField: PropTypes.func
 };

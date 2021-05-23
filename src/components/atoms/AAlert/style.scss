@@ -3,7 +3,8 @@
 .alert {
   position: fixed;
   top: $header-height;
-  width: calc(100% - #{$navbar-width + $spacing-unit * 12})
+  width: calc(100% - #{$navbar-width + $spacing-unit * 12});
+  z-index: $z-index-alert;
 }
 
 .ant-alert-info {

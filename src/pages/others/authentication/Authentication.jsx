@@ -9,9 +9,10 @@ import Register from './Register';
 import LoginBackground from './LoginBackground';
 import RegisterBackground from './RegisterBackground';
 import { ANIMATIONS_ENUM, transitionDuration } from './variable';
+import useErrorMessage from '../../../hooks/useErrorMessage';
 import './style.scss';
 
-const Authentication = ({ login, history }) => {
+const Authentication = ({ login, register, history }) => {
   const [isShowLogin, setIsShowLogin] = useState(true);
   const [currentAnimation, setCurrentAnimation] = useState(null);
   const [credentials, setCredentials] = useState({
@@ -19,6 +20,7 @@ const Authentication = ({ login, history }) => {
     password: '',
     confirmPassword: '',
   });
+  const { errors, setErrors, onFocusField } = useErrorMessage();
   const [isLoading, setIsLoading] = useState(false);
 
   const isShowAnimationLogin = currentAnimation === 'showLogin';
@@ -39,23 +41,26 @@ const Authentication = ({ login, history }) => {
     });
   };
 
-  const onRegister = () => {
-
-  };
-
-  const onLoginSuccess = () => {
+  const onSuccess = () => {
     setIsLoading(false);
     history.push('/');
   };
 
-  const onLoginError = () => {
+  const onError = (responseErrors) => {
+    setErrors(responseErrors);
     setIsLoading(false);
   };
 
   const onLogin = () => {
     setIsLoading(true);
     const { email, password } = credentials;
-    login({ email, password }, onLoginSuccess, onLoginError);
+    login({ email, password }, onSuccess, onError);
+  };
+
+  const onRegister = () => {
+    setIsLoading(true);
+    const { email, password, confirmPassword } = credentials;
+    register({ email, password, confirmPassword }, onSuccess, onError);
   };
 
   const renderRegister = () => (
@@ -66,6 +71,8 @@ const Authentication = ({ login, history }) => {
           isLoading={isLoading}
           onChangeCredentials={onChangeCredentials}
           onRegister={onRegister}
+          onFocusField={onFocusField}
+          errors={errors}
         />
       ) : (
         <RegisterBackground onChangeAnimation={onChangeAnimation} />
@@ -81,6 +88,8 @@ const Authentication = ({ login, history }) => {
           isLoading={isLoading}
           onChangeCredentials={onChangeCredentials}
           onLogin={onLogin}
+          onFocusField={onFocusField}
+          errors={errors}
         />
       ) : (
         <LoginBackground onChangeAnimation={onChangeAnimation} />
@@ -103,6 +112,7 @@ const Authentication = ({ login, history }) => {
 
 Authentication.propTypes = {
   login: PropTypes.func.isRequired,
+  register: PropTypes.func.isRequired,
   history: PropTypes.any.isRequired
 };
 

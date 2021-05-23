@@ -15,7 +15,8 @@ const AInput = ({
   type,
   autoSize,
   allowClear,
-  value
+  value,
+  onFocus
 }) => {
   const renderInput = () => {
     switch (type) {
@@ -28,6 +29,7 @@ const AInput = ({
           size={size}
           allowClear={allowClear}
           value={value}
+          onFocus={onFocus}
         />
       );
       case 'password': return (
@@ -39,6 +41,7 @@ const AInput = ({
           size={size}
           allowClear={allowClear}
           value={value}
+          onFocus={onFocus}
           iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
         />
       );
@@ -52,6 +55,7 @@ const AInput = ({
           autoSize={autoSize}
           allowClear={allowClear}
           value={value}
+          onFocus={onFocus}
         />
       );
       default: {
@@ -73,7 +77,8 @@ AInput.defaultProps = {
   type: 'text',
   autoSize: false,
   allowClear: false,
-  value: ''
+  value: '',
+  onFocus: () => {}
 };
 
 AInput.propTypes = {
@@ -85,5 +90,6 @@ AInput.propTypes = {
   type: PropTypes.string,
   value: PropTypes.string,
   autoSize: PropTypes.bool || PropTypes.object,
-  allowClear: PropTypes.bool
+  allowClear: PropTypes.bool,
+  onFocus: PropTypes.func,
 };
