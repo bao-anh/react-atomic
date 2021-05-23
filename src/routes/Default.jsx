@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import { AAlert } from '../components/atoms';
 import { ANavbar } from '../components/organisms';
 import {
   Tyography,
@@ -12,6 +13,7 @@ const Default = () => (
   <div className="navbar-and-content">
     <ANavbar />
     <div className="content">
+      <AAlert className="with-navbar" />
       <Route path="/components/button" exact component={Button} />
       <Route path="/components/typography" exact component={Tyography} />
       <Route path="/components/alert" exact component={Alert} />

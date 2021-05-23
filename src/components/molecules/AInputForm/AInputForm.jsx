@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Form } from 'antd';
 import AInputLabel from '../AInputLabel/AInputLabel';
+import './style.scss';
 
 const { Item } = Form;
 
@@ -18,12 +19,15 @@ const AInputForm = ({
   allowClear,
   value,
   name,
-  rules
+  rules,
+  errorMessage,
+  onFocus
 }) => (
   <Item
-    className={className}
+    className={`${className} input-form`}
     name={name}
     rules={rules}
+    extra={errorMessage}
   >
     <AInputLabel
       label={label}
@@ -36,6 +40,7 @@ const AInputForm = ({
       autoSize={autoSize}
       type={type}
       allowClear={allowClear}
+      onFocus={onFocus}
     />
   </Item>
 );
@@ -53,7 +58,9 @@ AInputForm.defaultProps = {
   allowClear: false,
   value: '',
   name: '',
-  rules: [{}]
+  rules: [{}],
+  errorMessage: '',
+  onFocus: () => {}
 };
 
 AInputForm.propTypes = {
@@ -69,7 +76,9 @@ AInputForm.propTypes = {
   allowClear: PropTypes.bool,
   value: PropTypes.string,
   name: PropTypes.string,
-  rules: PropTypes.arrayOf(PropTypes.object)
+  rules: PropTypes.arrayOf(PropTypes.object),
+  errorMessage: PropTypes.string,
+  onFocus: PropTypes.func,
 };
 
 export default AInputForm;

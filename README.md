@@ -37,3 +37,9 @@
 - Create validation with express-validator
 - Create validaionUtils, formatUtils
 - Create OAuth2 authorization
+- Init redux, redux-saga, services, store, actions, types, reducers
+- First call api to server
+
+### 23/05/2021
+- Graft api for register
+- Create alert reducer

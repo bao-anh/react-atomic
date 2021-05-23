@@ -9,5 +9,5 @@ mongoose.connect(uri, {
 
 const { connection } = mongoose;
 connection.once('open', () => {
-  console.log('MongoDB database connected successfully');
+  console.info('MongoDB database connected successfully');
 });

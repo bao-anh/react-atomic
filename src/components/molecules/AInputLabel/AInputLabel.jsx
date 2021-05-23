@@ -14,7 +14,8 @@ const AInputLabel = ({
   type,
   autoSize,
   allowClear,
-  value
+  value,
+  onFocus
 }) => (
   <div className={`$label-wrapper ${className}`}>
     <ATypography className="label">
@@ -30,12 +31,14 @@ const AInputLabel = ({
       type={type}
       allowClear={allowClear}
       value={value}
+      onFocus={onFocus}
     />
   </div>
 );
 
 AInputLabel.defaultProps = {
   onChange: () => {},
+  onFocus: () => {},
   className: '',
   label: '',
   placeholder: '',
@@ -59,7 +62,8 @@ AInputLabel.propTypes = {
   type: PropTypes.string,
   autoSize: PropTypes.bool || PropTypes.object,
   allowClear: PropTypes.bool,
-  value: PropTypes.string
+  value: PropTypes.string,
+  onFocus: PropTypes.func,
 };
 
 export default AInputLabel;

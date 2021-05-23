@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
-const { userRouter } = require('./routes');
+const { userRouter, authRouter } = require('./routes');
+const { auth } = require('./middlewares');
 
 require('dotenv').config();
 require('./db');
@@ -13,10 +14,11 @@ app.use(cors());
 app.use(express.json());
 
 // Router
-router.use('/users', userRouter);
+router.use('/auth', authRouter);
+router.use('/users', auth, userRouter);
 
 app.use('/api', router);
 
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+  console.info(`Server running on port ${port}`);
 });

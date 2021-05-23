@@ -6,7 +6,6 @@ import {
 } from 'react-router-dom';
 import './App.less';
 import { AHeader } from './components/organisms';
-import { AAlert } from './components/atoms';
 import { Default, Authentication } from './routes';
 import { AlertProvider } from './contexts/alert/alert';
 
@@ -17,7 +16,6 @@ function App() {
       <BrowserRouter>
         <AHeader />
         <AlertProvider>
-          <AAlert />
           <Switch>
             <Route path="/login" exact component={Authentication} />
             <Route component={Default} />

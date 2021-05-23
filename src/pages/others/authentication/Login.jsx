@@ -5,7 +5,14 @@ import { ATypography } from '../../../components/atoms';
 import { AInputForm, AButtonForm } from '../../../components/molecules';
 import { emailRule, passwordRule } from '../../../utils/validationUtils';
 
-const Login = ({ credentials, onChangeCredentials, onLogin }) => (
+const Login = ({
+  credentials,
+  onChangeCredentials,
+  onLogin,
+  isLoading,
+  errors,
+  onFocusField
+}) => (
   <div className="authentication-login-wrapper">
     <ATypography
       variant="title"
@@ -27,6 +34,8 @@ const Login = ({ credentials, onChangeCredentials, onLogin }) => (
           rules={emailRule}
           placeholder="Enter your email"
           onChange={(e) => onChangeCredentials('email', e.target.value)}
+          onFocus={() => onFocusField('email')}
+          errorMessage={errors.email}
         />
         <AInputForm
           value={credentials.password}
@@ -35,10 +44,16 @@ const Login = ({ credentials, onChangeCredentials, onLogin }) => (
           rules={passwordRule}
           placeholder="Enter your password"
           type="password"
+          onFocus={() => onFocusField('password')}
           onChange={(e) => onChangeCredentials('password', e.target.value)}
+          errorMessage={errors.password}
         />
       </div>
-      <AButtonForm htmlType="submit" block>
+      <AButtonForm
+        htmlType="submit"
+        block
+        loading={isLoading}
+      >
         Login
       </AButtonForm>
     </Form>
@@ -49,11 +64,16 @@ export default Login;
 
 Login.defaultProps = {
   onChangeCredentials: () => {},
-  onLogin: () => {}
+  onLogin: () => {},
+  isLoading: false,
+  onFocusField: () => {}
 };
 
 Login.propTypes = {
   credentials: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired,
   onChangeCredentials: PropTypes.func,
   onLogin: PropTypes.func,
+  isLoading: PropTypes.bool,
+  onFocusField: PropTypes.func
 };

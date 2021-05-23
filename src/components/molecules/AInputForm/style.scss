@@ -1,0 +1,19 @@
+@import '../../../assets/styles/global-variable';
+
+.ant-form-item {
+  margin-bottom: 0
+}
+
+.ant-form-item-explain-error {
+  display: block;
+}
+
+.input-form {
+  .ant-form-item-control {
+    min-height: 78px;
+  }
+
+  .ant-form-item-extra {
+    color: $red-5;
+  }
+}
