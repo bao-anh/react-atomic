@@ -3,9 +3,7 @@ import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
-import configureStore from './redux/store';
-
-const store = configureStore();
+import store from './redux/store';
 
 ReactDOM.render(
   // eslint-disable-next-line react/jsx-filename-extension

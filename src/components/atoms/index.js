@@ -7,6 +7,7 @@ import AAlert from './AAlert/AAlert';
 import AInput from './AInput/AInput';
 import ACard from './ACard/ACard';
 import AImage from './AImage/AImage';
+import AModal from './AModal/AModal';
 
 export {
   AButton,
@@ -17,5 +18,6 @@ export {
   AAlert,
   AInput,
   ACard,
-  AImage
+  AImage,
+  AModal
 };
