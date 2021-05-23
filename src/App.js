@@ -6,8 +6,9 @@ import {
 } from 'react-router-dom';
 import './App.less';
 import { AHeader } from './components/organisms';
-import { Default, Authentication } from './routes';
+import { Default, Authentication, PrivateRoute } from './routes';
 import { AlertProvider } from './contexts/alert/alert';
+import ResponseHandler from './pages/others/handler/responseHandler/ResponseHandler';
 
 function App() {
   return (
@@ -15,10 +16,11 @@ function App() {
     <div className="app-wrapper">
       <BrowserRouter>
         <AHeader />
+        <ResponseHandler />
         <AlertProvider>
           <Switch>
             <Route path="/login" exact component={Authentication} />
-            <Route component={Default} />
+            <PrivateRoute component={Default} />
           </Switch>
         </AlertProvider>
       </BrowserRouter>

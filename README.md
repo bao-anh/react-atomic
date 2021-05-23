@@ -43,3 +43,8 @@
 ### 23/05/2021
 - Graft api for register
 - Create alert reducer
+- Create private route and auto redirect
+- Create api intercepter
+- Create components AModal
+- Create ResponseHandle to show popup if unauthorized or server error
+- Accomplished all authentication task
