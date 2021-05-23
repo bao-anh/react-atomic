@@ -13,7 +13,7 @@ const Default = () => (
   <div className="navbar-and-content">
     <ANavbar />
     <div className="content">
-      <AAlert />
+      <AAlert className="with-navbar" />
       <Route path="/components/button" exact component={Button} />
       <Route path="/components/typography" exact component={Tyography} />
       <Route path="/components/alert" exact component={Alert} />

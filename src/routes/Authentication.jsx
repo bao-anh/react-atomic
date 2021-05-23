@@ -5,7 +5,7 @@ import { Authentication as Login } from '../pages';
 
 const Authentication = () => (
   <div className="authentication-wrapper">
-    <AAlert />
+    <AAlert className="without-navbar" />
     <Route path="/login" exact component={Login} />
   </div>
 );

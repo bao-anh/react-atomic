@@ -3,8 +3,35 @@
 .alert {
   position: fixed;
   top: $header-height;
-  width: calc(100% - #{$navbar-width + $spacing-unit * 12});
   z-index: $z-index-alert;
+  animation: show-alert-animation #{$transition-duration / 10} linear;
+}
+
+.without-navbar {
+  width: 80%;
+  left: 10%;
+}
+
+.with-navbar {
+  width: calc(100% - #{$navbar-width + $spacing-unit * 12});
+}
+
+@keyframes show-alert-animation {
+  0% {
+    transform: translateY(-200%);
+  }
+  25% {
+    transform: translateY(-150%);
+  }
+  50% {
+    transform: translateY(-100%);
+  }
+  75% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
 
 .ant-alert-info {

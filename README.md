@@ -42,3 +42,4 @@
 
 ### 23/05/2021
 - Graft api for register
+- Create alert reducer
