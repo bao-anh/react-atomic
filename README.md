@@ -53,3 +53,5 @@
 - Create error boundary page and 404 not found page
 - Change primary theme from green-5 to blue-5
 - Create multi-language in React
+- Create multi-language in Express
+- Add Accept-Language to axios header

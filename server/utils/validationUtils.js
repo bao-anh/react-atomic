@@ -1,28 +1,35 @@
 const { check, body } = require('express-validator');
 
 const checkEmail = [
-  check('email', 'Email is invalid').isEmail(),
-  check('email', 'Email is required').not().isEmpty(),
+  check('email').isEmail().withMessage((value, { req }) => req.t('auth.login.error.email.notValid')),
+  check('email').not().isEmpty().withMessage((value, { req }) => req.t('auth.login.error.email.isRequired')),
 ];
 
 const checkPassword = [
-  check('password', 'Password must contain at least 8 characters').isLength({ min: 8 }),
-  check('password', 'Password is required').not().isEmpty(),
+  check('password').isLength({ min: 8 }).withMessage((value, { req }) => req.t('auth.login.error.password.notValid')),
+  check('password').not().isEmpty().withMessage((value, { req }) => req.t('auth.login.error.password.isRequired')),
 ];
 
 const checkConfirmPassword = [
   body('confirmPassword').custom((value, { req }) => {
-    if (value !== req.body.password) throw new Error('Two passwords must be the same');
+    if (value !== req.body.password) throw new Error(req.t('auth.login.error.confirmPassword.notMatch'));
     return true;
   }),
-  check('confirmPassword', 'Confirm password must contain at least 8 characters').isLength({ min: 8 }),
-  check('confirmPassword', 'Confirm password is required').not().isEmpty(),
+  check('confirmPassword').isLength({ min: 8 })
+    .withMessage((value, { req }) => req.t('auth.login.error.confirmPassword.notValid')),
+  check('confirmPassword').not().isEmpty()
+    .withMessage((value, { req }) => req.t('auth.login.error.confirmPassword.isRequired')),
 ];
 
-const registerUserValidation = () => ([
+const loginUserValidation = [
+  ...checkEmail,
+  ...checkPassword
+];
+
+const registerUserValidation = [
   ...checkEmail,
   ...checkPassword,
   ...checkConfirmPassword
-]);
+];
 
-module.exports = { registerUserValidation };
+module.exports = { registerUserValidation, loginUserValidation };

@@ -34,7 +34,7 @@ const Login = ({
             value={credentials.email}
             label={`${t('authentication.email.label')}`}
             name="email"
-            rules={emailRule}
+            rules={emailRule(t)}
             placeholder={`${t('authentication.email.placeholder')}`}
             onChange={(e) => onChangeCredentials('email', e.target.value)}
             onFocus={() => onFocusField('email')}
@@ -44,7 +44,7 @@ const Login = ({
             value={credentials.password}
             label={`${t('authentication.password.label')}`}
             name="password"
-            rules={passwordRule}
+            rules={passwordRule(t)}
             placeholder={`${t('authentication.email.placeholder')}`}
             type="password"
             onFocus={() => onFocusField('password')}

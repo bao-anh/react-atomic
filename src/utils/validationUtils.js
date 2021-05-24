@@ -1,36 +1,36 @@
 import { passwordRegex } from '../constants/regex';
 
-export const emailRule = [
+export const emailRule = (t) => ([
   {
     required: true,
-    message: 'Please enter your email address'
+    message: t('authentication.email.isRequired')
   },
   {
     type: 'email',
-    message: 'Please enter valid email address'
+    message: t('authentication.email.notValid')
   }
-];
+]);
 
-export const passwordRule = [
+export const passwordRule = (t) => ([
   {
     required: true,
-    message: 'Please enter your password'
+    message: t('authentication.password.isRequired')
   },
   {
     pattern: passwordRegex,
-    message: 'Please enter at least 8 characters'
+    message: t('authentication.password.notValid')
   }
-];
+]);
 
-export const confirmPasswordRule = [
+export const confirmPasswordRule = (t) => ([
   {
     required: true,
-    message: 'Please confirm your password!',
+    message: t('authentication.confirmPassword.isRequired'),
   },
   ({ getFieldValue }) => ({
     validator(_, value) {
       if (!value || getFieldValue('password') === value) return Promise.resolve();
-      return Promise.reject(new Error('The two passwords do not match!'));
+      return Promise.reject(new Error(t('authentication.confirmPassword.notValid')));
     },
   }),
-];
+]);

@@ -33,7 +33,7 @@ const Register = ({
           value={credentials.email}
           label={`${t('authentication.email.label')}`}
           name="email"
-          rules={emailRule}
+          rules={emailRule(t)}
           placeholder={`${t('authentication.email.placeholder')}`}
           errorMessage={errors?.email}
           onFocus={() => onFocusField('email')}
@@ -43,7 +43,7 @@ const Register = ({
           value={credentials.password}
           label={`${t('authentication.password.label')}`}
           name="password"
-          rules={passwordRule}
+          rules={passwordRule(t)}
           placeholder={`${t('authentication.password.placeholder')}`}
           type="password"
           errorMessage={errors?.password}
@@ -53,7 +53,7 @@ const Register = ({
         <AInputForm
           value={credentials.confirmPassword}
           label={`${t('authentication.confirmPassword.label')}`}
-          rules={confirmPasswordRule}
+          rules={confirmPasswordRule(t)}
           name="confirmPassword"
           placeholder={`${t('authentication.confirmPassword.placeholder')}`}
           type="password"
