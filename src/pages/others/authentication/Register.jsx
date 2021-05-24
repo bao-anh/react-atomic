@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import { Form } from 'antd';
 import { ATypography } from '../../../components/atoms';
@@ -12,62 +13,65 @@ const Register = ({
   isLoading,
   errors,
   onFocusField
-}) => (
-  <div className="authentication-login-wrapper">
-    <ATypography
-      variant="title"
-      level={3}
-      className="text-center"
-    >
-      Register
-    </ATypography>
-    <Form
-      name="register"
-      className="authentication-content"
-      onFinish={onRegister}
-    >
-      <AInputForm
-        value={credentials.email}
-        label="Email"
-        name="email"
-        rules={emailRule}
-        placeholder="Enter your email"
-        errorMessage={errors?.email}
-        onFocus={() => onFocusField('email')}
-        onChange={(e) => onChangeCredentials('email', e.target.value)}
-      />
-      <AInputForm
-        value={credentials.password}
-        label="Password"
-        name="password"
-        rules={passwordRule}
-        placeholder="Enter your password"
-        type="password"
-        errorMessage={errors?.password}
-        onFocus={() => onFocusField('password')}
-        onChange={(e) => onChangeCredentials('password', e.target.value)}
-      />
-      <AInputForm
-        value={credentials.confirmPassword}
-        label="Confirm password"
-        rules={confirmPasswordRule}
-        name="confirmPassword"
-        placeholder="Enter your confirm password"
-        type="password"
-        errorMessage={errors?.confirmPassword}
-        onFocus={() => onFocusField('confirmPassword')}
-        onChange={(e) => onChangeCredentials('confirmPassword', e.target.value)}
-      />
-      <AButtonForm
-        htmlType="submit"
-        block
-        loading={isLoading}
+}) => {
+  const { t } = useTranslation();
+  return (
+    <div className="authentication-login-wrapper">
+      <ATypography
+        variant="title"
+        level={3}
+        className="text-center"
       >
-        Register
-      </AButtonForm>
-    </Form>
-  </div>
-);
+        {t('authentication.register')}
+      </ATypography>
+      <Form
+        name="register"
+        className="authentication-content"
+        onFinish={onRegister}
+      >
+        <AInputForm
+          value={credentials.email}
+          label={`${t('authentication.email.label')}`}
+          name="email"
+          rules={emailRule}
+          placeholder={`${t('authentication.email.placeholder')}`}
+          errorMessage={errors?.email}
+          onFocus={() => onFocusField('email')}
+          onChange={(e) => onChangeCredentials('email', e.target.value)}
+        />
+        <AInputForm
+          value={credentials.password}
+          label={`${t('authentication.password.label')}`}
+          name="password"
+          rules={passwordRule}
+          placeholder={`${t('authentication.password.placeholder')}`}
+          type="password"
+          errorMessage={errors?.password}
+          onFocus={() => onFocusField('password')}
+          onChange={(e) => onChangeCredentials('password', e.target.value)}
+        />
+        <AInputForm
+          value={credentials.confirmPassword}
+          label={`${t('authentication.confirmPassword.label')}`}
+          rules={confirmPasswordRule}
+          name="confirmPassword"
+          placeholder={`${t('authentication.confirmPassword.placeholder')}`}
+          type="password"
+          errorMessage={errors?.confirmPassword}
+          onFocus={() => onFocusField('confirmPassword')}
+          onChange={(e) => onChangeCredentials('confirmPassword', e.target.value)}
+        />
+        <AButtonForm
+          htmlType="submit"
+          block
+          loading={isLoading}
+        >
+          {t('authentication.register')}
+        </AButtonForm>
+      </Form>
+    </div>
+  );
+};
 
 export default Register;
 

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withTranslation } from 'react-i18next';
 import { ATypography } from '../../../../components/atoms';
 import './style.scss';
 
-export default class ErrorBoundary extends Component {
+class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,7 +22,8 @@ export default class ErrorBoundary extends Component {
 
   render() {
     const { error, errorInfo } = this.state;
-    const { children } = this.props;
+    const { children, t } = this.props;
+
     if (error || errorInfo) {
       return (
         <div className="ui-handler">
@@ -29,7 +31,7 @@ export default class ErrorBoundary extends Component {
             Oops
           </ATypography>
           <ATypography variant="title" level={2}>
-            Something went wrong
+            {t('handler.uiHandler.errorBoundary')}
           </ATypography>
         </div>
       );
@@ -39,5 +41,8 @@ export default class ErrorBoundary extends Component {
 }
 
 ErrorBoundary.propTypes = {
-  children: PropTypes.any.isRequired
+  children: PropTypes.any.isRequired,
+  t: PropTypes.any.isRequired
 };
+
+export default withTranslation()(ErrorBoundary);

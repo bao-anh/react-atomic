@@ -52,3 +52,4 @@
 ### 24/05/2021
 - Create error boundary page and 404 not found page
 - Change primary theme from green-5 to blue-5
+- Create multi-language in React

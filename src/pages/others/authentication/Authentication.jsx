@@ -43,7 +43,7 @@ const Authentication = ({ login, register, history }) => {
 
   const onSuccess = () => {
     setIsLoading(false);
-    history.push('/');
+    history.push('/components/button');
   };
 
   const onError = (responseErrors) => {

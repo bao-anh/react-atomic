@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './style.scss';
 import { AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
 import { AMenu } from '../../atoms';
 
 const ANavBar = ({ location }) => {
   const handleGetSelectedItem = (order) => location.pathname.split('/')[order];
+  const { t } = useTranslation();
 
   const [menu] = useState({
     renderDefaultSelectedKeys: [`${handleGetSelectedItem(1)}-${handleGetSelectedItem(2)}`],
@@ -15,7 +17,7 @@ const ANavBar = ({ location }) => {
     childrens: [
       {
         key: 'components',
-        title: 'Components',
+        title: t('navbar.component'),
         icon: <AppstoreOutlined />,
         childrens: [
           {
@@ -42,17 +44,17 @@ const ANavBar = ({ location }) => {
       },
       {
         key: 'settings',
-        title: 'Settings',
+        title: t('navbar.setting'),
         icon: <SettingOutlined />,
         childrens: [
           {
             key: 'settings-profile',
-            title: 'Profile',
+            title: t('navbar.setting.profile'),
             link: '/settings/profile'
           },
           {
             key: 'settings-themes',
-            title: 'Themes',
+            title: t('navbar.setting.themes'),
             link: '/settings/themes'
           }
         ]

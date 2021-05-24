@@ -36,7 +36,8 @@ module.exports = {
     'react/forbid-prop-types': 'off',
     'no-underscore-dangle': 'off',
     'react/jsx-props-no-spreading': 'off',
-    'import/no-cycle': [0, { ignoreExternal: true }]
+    'import/no-cycle': [0, { ignoreExternal: true }],
+    'import/no-unresolved': 'off'
   },
   settings: {
     react: {

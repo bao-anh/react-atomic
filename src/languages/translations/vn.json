@@ -1,0 +1,20 @@
+{
+  "authentication.login": "Đăng nhập",
+  "authentication.email.label": "Email",
+  "authentication.email.placeholder": "Nhập email của bạn",
+  "authentication.password.label": "Mật khẩu",
+  "authentication.password.placeholder": "Nhập mật khẩu của bạn",
+  "authentication.confirmPassword.label": "Xác nhận mật khẩu",
+  "authentication.confirmPassword.placeholder": "Nhập xác nhận mật khẩu của bạn",
+  "authentication.register": "Đăng ký",
+
+  "handler.responseHandler.title": "Server phản hồi",
+  "handler.responseHandler.okText": "Đăng nhập",
+  "handler.uiHandler.errorBoundary": "Đã có lỗi xảy ra",
+  "handler.uiHandler.notFound": "Trang không tồn tại",
+
+  "navbar.component": "Thành phần",
+  "navbar.setting": "Cài đặt",
+  "navbar.setting.profile": "Thông tin cá nhân",
+  "navbar.setting.themes": "Chủ đề"
+}

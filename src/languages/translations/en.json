@@ -1,0 +1,20 @@
+{
+  "authentication.login": "Login",
+  "authentication.email.label": "Email",
+  "authentication.email.placeholder": "Enter your email",
+  "authentication.password.label": "Password",
+  "authentication.password.placeholder": "Enter your password",
+  "authentication.confirmPassword.label": "Confirm password",
+  "authentication.confirmPassword.placeholder": "Enter you confirm password",
+  "authentication.register": "Register",
+
+  "handler.responseHandler.title": "Server response",
+  "handler.responseHandler.okText": "Login",
+  "handler.uiHandler.errorBoundary": "Something went wrong",
+  "handler.uiHandler.notFound": "Page not found",
+
+  "navbar.component": "Components",
+  "navbar.setting": "Settings",
+  "navbar.setting.profile": "Profile",
+  "navbar.setting.themes": "Themes"
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -12,20 +13,22 @@ const ResponseHandler = ({
   setModalClose,
 }) => {
   const history = useHistory();
+  const { t } = useTranslation();
+
   const onOk = () => {
     removeToken();
-    history.push('/');
+    history.push('/login');
     setModalClose();
   };
 
   return (
     <AModal
-      title="Server response"
+      title={`${t('handler.responseHandler.title')}`}
       visible={modal.isOpen}
       onOk={onOk}
       cancelButtonProps={{ style: { display: 'none' } }}
       closable={false}
-      okText="Login"
+      okText={`${t('handler.responseHandler.okText')}`}
     >
       {modal.content}
     </AModal>
