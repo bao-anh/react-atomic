@@ -9,6 +9,7 @@ import { AHeader } from './components/organisms';
 import { Default, Authentication, PrivateRoute } from './routes';
 import { AlertProvider } from './contexts/alert/alert';
 import ResponseHandler from './pages/others/handler/responseHandler/ResponseHandler';
+import { ErrorBoundary, NotFound } from './pages/others/handler/uiHandler';
 
 function App() {
   return (
@@ -17,12 +18,15 @@ function App() {
       <BrowserRouter>
         <AHeader />
         <ResponseHandler />
-        <AlertProvider>
-          <Switch>
-            <Route path="/login" exact component={Authentication} />
-            <PrivateRoute component={Default} />
-          </Switch>
-        </AlertProvider>
+        <ErrorBoundary>
+          <AlertProvider>
+            <Switch>
+              <Route path="/login" exact component={Authentication} />
+              <PrivateRoute path="/components" component={Default} />
+              <Route component={NotFound} />
+            </Switch>
+          </AlertProvider>
+        </ErrorBoundary>
       </BrowserRouter>
     </div>
   );

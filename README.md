@@ -48,3 +48,7 @@
 - Create components AModal
 - Create ResponseHandle to show popup if unauthorized or server error
 - Accomplished all authentication task
+
+### 24/05/2021
+- Create error boundary page and 404 not found page
+- Change primary theme from green-5 to blue-5

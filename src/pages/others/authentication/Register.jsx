@@ -32,7 +32,7 @@ const Register = ({
         name="email"
         rules={emailRule}
         placeholder="Enter your email"
-        errorMessage={errors.email}
+        errorMessage={errors?.email}
         onFocus={() => onFocusField('email')}
         onChange={(e) => onChangeCredentials('email', e.target.value)}
       />
@@ -43,7 +43,7 @@ const Register = ({
         rules={passwordRule}
         placeholder="Enter your password"
         type="password"
-        errorMessage={errors.password}
+        errorMessage={errors?.password}
         onFocus={() => onFocusField('password')}
         onChange={(e) => onChangeCredentials('password', e.target.value)}
       />
@@ -54,7 +54,7 @@ const Register = ({
         name="confirmPassword"
         placeholder="Enter your confirm password"
         type="password"
-        errorMessage={errors.confirmPassword}
+        errorMessage={errors?.confirmPassword}
         onFocus={() => onFocusField('confirmPassword')}
         onChange={(e) => onChangeCredentials('confirmPassword', e.target.value)}
       />
