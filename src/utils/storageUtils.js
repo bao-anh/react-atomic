@@ -1,5 +1,5 @@
 const ACCESS_TOKEN = 'access_token';
-const LANGUAGE = 'language';
+const LANGUAGE = 'i18nextLng';
 
 export const getToken = () => window.localStorage.getItem(ACCESS_TOKEN);
 

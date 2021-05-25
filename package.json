@@ -10,6 +10,7 @@
     "axios": "^0.21.1",
     "craco-less": "^1.17.1",
     "i18next": "^20.3.0",
+    "i18next-browser-languagedetector": "^6.1.1",
     "node-sass": "^6.0.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",

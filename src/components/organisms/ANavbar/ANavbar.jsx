@@ -48,9 +48,9 @@ const ANavBar = ({ location }) => {
         icon: <SettingOutlined />,
         childrens: [
           {
-            key: 'settings-profile',
-            title: t('navbar.setting.profile'),
-            link: '/settings/profile'
+            key: 'settings-general',
+            title: t('navbar.setting.general'),
+            link: '/settings/general'
           },
           {
             key: 'settings-themes',

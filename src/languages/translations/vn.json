@@ -21,6 +21,11 @@
 
   "navbar.component": "Thành phần",
   "navbar.setting": "Cài đặt",
-  "navbar.setting.profile": "Thông tin cá nhân",
-  "navbar.setting.themes": "Chủ đề"
+  "navbar.setting.general": "Thông tin chung",
+  "navbar.setting.themes": "Chủ đề",
+
+  "settings.general.language": "Ngôn ngữ",
+  "settings.general.language.title": "Chọn ngôn ngữ của bạn",
+  "settings.general.language.subTitle": "Việc lựa chọn sẽ ảnh hưởng tới những gì bạn nhìn thấy trên menus, hội thoại, chữ",
+  "settings.general.language.submit": "Thay đổi ngôn ngữ"
 }

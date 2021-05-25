@@ -1,0 +1,31 @@
+@import '../../../assets/styles/global-variable';
+
+.setting-general-grid {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  gap: 5 * $spacing-unit;
+  padding-right: 24px;
+
+  .settings-general-left {
+    margin: 0 auto;
+  }
+
+  .settings-general-right {
+    display: flex;
+    flex-direction: column;
+    gap: 6 * $spacing-unit;
+    padding: 24px;
+    background-color: $gray-1;
+    &:hover {
+      box-shadow: $shadow-100;
+    }
+  }
+
+  .settings-general-select {
+    width: 280px;
+  }
+
+  .settings-general-submit {
+    width: fit-content
+  }
+}

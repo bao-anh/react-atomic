@@ -55,3 +55,8 @@
 - Create multi-language in React
 - Create multi-language in Express
 - Add Accept-Language to axios header
+
+### 25/05/2021
+- Create components AIconLabel
+- Create General Settings
+- Create change language page

@@ -21,6 +21,11 @@
 
   "navbar.component": "Components",
   "navbar.setting": "Settings",
-  "navbar.setting.profile": "Profile",
-  "navbar.setting.themes": "Themes"
+  "navbar.setting.general": "General",
+  "navbar.setting.themes": "Themes",
+
+  "settings.general.language": "Language",
+  "settings.general.language.title": "Choose your language",
+  "settings.general.language.subTitle": "Adjust the language you see in menus, dialogs, instructions, paragraphs and texts",
+  "settings.general.language.submit": "Change your language"
 }
