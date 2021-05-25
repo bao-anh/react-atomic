@@ -1,0 +1,31 @@
+{
+  "authentication.login": "Login",
+  "authentication.email.label": "Email",
+  "authentication.email.placeholder": "Enter your email",
+  "authentication.email.isRequired": "Please enter your email address",
+  "authentication.email.notValid": "Please enter valid email address",
+  "authentication.password.label": "Password",
+  "authentication.password.placeholder": "Enter your password",
+  "authentication.password.isRequired": "Please enter your password",
+  "authentication.password.notValid": "Please enter at least 8 characters",
+  "authentication.confirmPassword.label": "Confirm password",
+  "authentication.confirmPassword.placeholder": "Enter you confirm password",
+  "authentication.confirmPassword.isRequired": "Please enter your confirm password",
+  "authentication.confirmPassword.notValid": "The two passwords do not match!",
+  "authentication.register": "Register",
+
+  "handler.responseHandler.title": "Server response",
+  "handler.responseHandler.okText": "Login",
+  "handler.uiHandler.errorBoundary": "Something went wrong",
+  "handler.uiHandler.notFound": "Page not found",
+
+  "navbar.component": "Components",
+  "navbar.setting": "Settings",
+  "navbar.setting.general": "General",
+  "navbar.setting.themes": "Themes",
+
+  "settings.general.language": "Language",
+  "settings.general.language.title": "Choose your language",
+  "settings.general.language.subTitle": "Adjust the language you see in menus, dialogs, instructions, paragraphs and texts",
+  "settings.general.language.submit": "Change your language"
+}

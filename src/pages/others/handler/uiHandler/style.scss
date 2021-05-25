@@ -1,0 +1,13 @@
+@import '../../../../assets/styles/global-variable';
+
+.ui-handler {
+  padding: 6 * $spacing-unit;
+
+  h2.ant-typography {
+    margin-top: $spacing-unit;
+  }
+
+  h1.ant-typography {
+    font-size: 6rem;
+  }
+};

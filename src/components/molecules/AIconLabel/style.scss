@@ -1,0 +1,24 @@
+.icon-label-wrapper {
+  display: flex;
+  align-items: center;
+
+  .icon-large {
+    font-size: 6rem;
+  }
+
+  .label-large {
+    font-size: 2rem
+  }
+
+  .icon-medium {
+    font-size: 4rem
+  }
+
+  .label-middle {
+    font-size: 1.5rem
+  }
+}
+
+.flex-bottom {
+  flex-direction: column;
+}

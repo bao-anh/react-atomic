@@ -1,0 +1,14 @@
+{
+  "auth.login.error.email.isRequired": "Email is required",
+  "auth.login.error.email.notValid": "Email is not valid",
+  "auth.login.error.email.notExisted": "Email doesnt exists",
+  "auth.login.error.email.isExisted": "Email is already exists",
+  "auth.login.error.password.isRequired": "Password is required",
+  "auth.login.error.password.notValid": "Password must contain at least 8 characters",
+  "auth.login.error.password.notMatch": "Password doesnt correct",
+  "auth.login.error.confirmPassword.notValid": "Confirm password must contain at least 8 characters",
+  "auth.login.error.confirmPassword.isRequired": "Confirm password is required",
+  "auth.login.error.confirmPassword.notMatch": "Two passwords must be the same",
+
+  "alert.register.success": "Register successfully"
+}

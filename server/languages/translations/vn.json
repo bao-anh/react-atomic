@@ -1,0 +1,14 @@
+{
+  "auth.login.error.email.isRequired": "Email không được để trống",
+  "auth.login.error.email.notValid": "Email không hợp lệ",
+  "auth.login.error.email.notExisted": "Email không tồn tại",
+  "auth.login.error.email.isExisted": "Email đã tồn tại",
+  "auth.login.error.password.notMatch": "Mật khẩu không chính xác",
+  "auth.login.error.password.isRequired": "Mật khẩu không được để trống",
+  "auth.login.error.password.notValid": "Mật khẩu phải bao gồm ít nhất 8 ký tự",
+  "auth.login.error.confirmPassword.notValid": "Xác nhận mật khẩu phải bao gồm ít nhất 8 ký tự",
+  "auth.login.error.confirmPassword.isRequired": "Xác nhận mật khẩu không để để trống",
+  "auth.login.error.confirmPassword.notMatch": "Hai mật khẩu không khớp",
+
+  "alert.register.success": "Đăng ký thành công"
+}

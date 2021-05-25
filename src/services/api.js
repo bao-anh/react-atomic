@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { BASE_URL } from '../constants/config';
-import { getToken } from '../utils/storageUtils';
+import { getToken, getLanguage } from '../utils/storageUtils';
 import { handleResponseError } from '../utils/handleResponseErrorUtils';
 
 const axiosInstance = axios.create({
@@ -8,6 +8,7 @@ const axiosInstance = axios.create({
   timeout: 60 * 60 * 5,
   headers: {
     Authorization: `Bearer ${getToken}`,
+    'Accept-Language': getLanguage() || 'en'
   },
 });
 

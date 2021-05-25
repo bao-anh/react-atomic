@@ -1,0 +1,31 @@
+{
+  "authentication.login": "Đăng nhập",
+  "authentication.email.label": "Email",
+  "authentication.email.placeholder": "Nhập email của bạn",
+  "authentication.email.isRequired": "Hãy nhập tài khoản email của bạn",
+  "authentication.email.notValid": "Tài khoản email của bạn không hợp lệ",
+  "authentication.password.label": "Mật khẩu",
+  "authentication.password.placeholder": "Nhập mật khẩu của bạn",
+  "authentication.password.isRequired": "Hãy nhập mật khẩu của bạn",
+  "authentication.password.notValid": "Mật khẩu phải bao gồm ít nhất 8 ký tự",
+  "authentication.confirmPassword.label": "Xác nhận mật khẩu",
+  "authentication.confirmPassword.placeholder": "Nhập xác nhận mật khẩu của bạn",
+  "authentication.confirmPassword.isRequired": "Hãy nhập mật khẩu xác nhận",
+  "authentication.confirmPassword.notValid": "Hai mật khẩu không khớp nhau",
+  "authentication.register": "Đăng ký",
+
+  "handler.responseHandler.title": "Server phản hồi",
+  "handler.responseHandler.okText": "Đăng nhập",
+  "handler.uiHandler.errorBoundary": "Đã có lỗi xảy ra",
+  "handler.uiHandler.notFound": "Trang không tồn tại",
+
+  "navbar.component": "Thành phần",
+  "navbar.setting": "Cài đặt",
+  "navbar.setting.general": "Thông tin chung",
+  "navbar.setting.themes": "Chủ đề",
+
+  "settings.general.language": "Ngôn ngữ",
+  "settings.general.language.title": "Chọn ngôn ngữ của bạn",
+  "settings.general.language.subTitle": "Việc lựa chọn sẽ ảnh hưởng tới những gì bạn nhìn thấy trên menus, hội thoại, chữ",
+  "settings.general.language.submit": "Thay đổi ngôn ngữ"
+}
