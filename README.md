@@ -60,3 +60,7 @@
 - Create components AIconLabel
 - Create General Settings
 - Create change language page
+
+### 26/05/2021
+- Refactor source code
+- Dockerlize project

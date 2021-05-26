@@ -1,0 +1,27 @@
+version: '3'
+services:
+  server:
+    container_name: react-atomic-server
+    restart: always
+    build:
+      context: .
+      dockerfile: ./server/Dockerfile
+    ports:
+      - '5000:5000'
+    links:
+      - client
+    networks:
+      - webappnetwork
+  client:
+    container_name: react-atomic-client
+    restart: always
+    build:
+      context: .
+      dockerfile: ./client/Dockerfile
+    ports:
+      - '3000:3000'
+    networks:
+      - webappnetwork
+networks:
+  webappnetwork:
+    driver: bridge

@@ -14,5 +14,5 @@ export {
   Alert,
   Input,
   Authentication,
-  Settings 
+  Settings
 };

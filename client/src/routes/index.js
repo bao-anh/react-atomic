@@ -1,3 +1,5 @@
 import PrivateRoute from './PrivateRoute';
 
-export { PrivateRoute };
+const foo = () => {};
+
+export { PrivateRoute, foo };
