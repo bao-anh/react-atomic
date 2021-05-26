@@ -4,7 +4,7 @@
   position: fixed;
   top: $header-height;
   z-index: $z-index-alert;
-  animation: show-alert-animation #{$transition-duration / 10} linear;
+  animation: show-alert-animation 0.1s linear;
 }
 
 .without-navbar {
